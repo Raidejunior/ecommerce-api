@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "15ca7a6a-d79e-4fa2-9e55-f3f6e29967ec",
+		"name": "Ecommerce - Case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15758427"
+	},
+	"item": [
+		{
+			"name": "Login e Cadastro",
+			"item": [
+				{
+					"name": "Cadastro Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJSYWlkZTIiLCJpYXQiOjE3NDI0NDAzNjEsImV4cCI6MTc0MjQ0Mzk2MX0.-VhgoKGxzL3e3X2br-cW8M1HouPMRGZFQDucfNOJHks0ZhNk1FHMphFwSSYVMaKz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeUsuario\" : \"admin2\",\r\n    \"senha\" : \"123\",\r\n    \"perfil\" : \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/cadastrarAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"cadastrarAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0MjUyNDY1OCwiZXhwIjoxNzQyNTI4MjU4fQ.Hhgagu60W7Qnx5jzrY0OPJh-PLXinuqjugcD5FA5oIOD4JgLEcnv8kGWLsX4WJ1I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeUsuario\": \"teste\",\r\n    \"senha\": 123,\r\n    \"perfil\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/cadastrarUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"cadastrarUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeUsuario\": \"admin\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeUsuario\": \"user1\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Lista Produtos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJSYWlkZTIiLCJpYXQiOjE3NDI0MzY4NDMsImV4cCI6MTc0MjQ0MDQ0M30.7JpHMPyNNBisPvcj3Zvu89yc2ZqS2-O_goyB9cE-yIaSy4_uzY5gtlhSeQSChimC",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJSYWlkZSIsImlhdCI6MTc0MjQ0NTg2MiwiZXhwIjoxNzQyNDQ5NDYyfQ.iGvqK04OdC0KTtoxOy9RMLA0LbE49I7EEIu5IEV43wQ1AX1ZBmybHjWLbk0QARjq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"calça\",\r\n    \"descricao\": \"jeans\",\r\n    \"preco\": \"89.90\",\r\n    \"categoria\": \"ROUPAS\",\r\n    \"quantidadeEmEstoque\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Produto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJSYWlkZSIsImlhdCI6MTc0MjQ0NTg2MiwiZXhwIjoxNzQyNDQ5NDYyfQ.iGvqK04OdC0KTtoxOy9RMLA0LbE49I7EEIu5IEV43wQ1AX1ZBmybHjWLbk0QARjq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"47abe1c5-00aa-44ea-affd-3743e394d78f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos/deletar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"deletar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Produto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJSYWlkZSIsImlhdCI6MTc0MjQ0MTQzNCwiZXhwIjoxNzQyNDQ1MDM0fQ.qSbAr_MAuG8Hg81E3I1WzDT48UZRsRUyoNpd2-95GR2xb0pKEyT9x4AmOJ5Fhe0N",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"f8eaca1e-4b8d-4bcb-a13f-e7dd99f11969\",\r\n    \"nome\": \"Tenis\",\r\n    \"descricao\": \"Conforto e beleza em um só lugar.\",\r\n    \"preco\": \"299.99\",\r\n    \"categoria\": \"ROUPAS\",\r\n    \"quantidadeEmEstoque\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos/atualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJSYWlkZSIsImlhdCI6MTc0MjQ0MTQzNCwiZXhwIjoxNzQyNDQ1MDM0fQ.qSbAr_MAuG8Hg81E3I1WzDT48UZRsRUyoNpd2-95GR2xb0pKEyT9x4AmOJ5Fhe0N",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"f8eaca1e-4b8d-4bcb-a13f-e7dd99f11969\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Criar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0ZSIsImlhdCI6MTc0MjUyNTE4MywiZXhwIjoxNzQyNTI4NzgzfQ.C9BaFtxJiDUfLGmbxKjr53lquratp5UC9iPGB_p3RJoZilfLCq96AXvyi27RugL8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itens\": [\r\n       \r\n        {\r\n            \"produtoId\": \"6bbd1f9e-5c16-4962-a9dc-1c232e2419a7\",\r\n            \"quantidade\": 2\r\n        },\r\n        {\r\n           \"produtoId\": \"f8eaca1e-4b8d-4bcb-a13f-e7dd99f11969\",\r\n            \"quantidade\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0ZSIsImlhdCI6MTc0MjUyNTE4MywiZXhwIjoxNzQyNTI4NzgzfQ.C9BaFtxJiDUfLGmbxKjr53lquratp5UC9iPGB_p3RJoZilfLCq96AXvyi27RugL8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"8d511f37-b057-47e6-abab-2466880a32ed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedidos/pagar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"pagar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pedidos Usuário",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0ZSIsImlhdCI6MTc0MjUyNTE4MywiZXhwIjoxNzQyNTI4NzgzfQ.C9BaFtxJiDUfLGmbxKjr53lquratp5UC9iPGB_p3RJoZilfLCq96AXvyi27RugL8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0MjUyNDY1OCwiZXhwIjoxNzQyNTI4MjU4fQ.Hhgagu60W7Qnx5jzrY0OPJh-PLXinuqjugcD5FA5oIOD4JgLEcnv8kGWLsX4WJ1I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/pedidos/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relatorio",
+			"item": [
+				{
+					"name": "Exibir Top 5",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0MjUyNDY1OCwiZXhwIjoxNzQyNTI4MjU4fQ.Hhgagu60W7Qnx5jzrY0OPJh-PLXinuqjugcD5FA5oIOD4JgLEcnv8kGWLsX4WJ1I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/relatorios/top-compradores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"relatorios",
+								"top-compradores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Total Faturamento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0MjUyNDY1OCwiZXhwIjoxNzQyNTI4MjU4fQ.Hhgagu60W7Qnx5jzrY0OPJh-PLXinuqjugcD5FA5oIOD4JgLEcnv8kGWLsX4WJ1I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mes\": 3,\r\n    \"ano\": 2025\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/relatorios/faturamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"relatorios",
+								"faturamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ticket Médio",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0MjUyNDY1OCwiZXhwIjoxNzQyNTI4MjU4fQ.Hhgagu60W7Qnx5jzrY0OPJh-PLXinuqjugcD5FA5oIOD4JgLEcnv8kGWLsX4WJ1I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/relatorios/ticket-medio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"relatorios",
+								"ticket-medio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
